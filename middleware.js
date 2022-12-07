@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getFromCacheOrApi } from 'Base'
+import {checkRedirection} from 'Base'
 
 export async function middleware(request) {
     const { nextUrl } = request
@@ -8,7 +8,10 @@ export async function middleware(request) {
         origin,
     } = nextUrl
     const oldUrl = href.replace(origin, '')
-    const data = await getFromCacheOrApi("/v1/01925c4c-b71b-46f5-ba9a-522071071374")
+    const redirectionResult = await checkRedirection(oldUrl)
+    if (redirectionResult.isRedirected) {
+        return NextResponse.redirect(new URL(redirectionResult.redirection.newUrl, request.origin))
+    }
   
 }
 
