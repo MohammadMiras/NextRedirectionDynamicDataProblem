@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  middleware: true,
   webpack: (config) => {
     config.resolve.fallback = { fs: false }
     config.module.rules.push({

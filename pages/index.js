@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { get } from "Base"
+import { getFromCacheOrApi } from "Base"
 
 export default function Home() {
   return (
@@ -73,7 +73,7 @@ export default function Home() {
 
 export async function getServerSideProps(context) {
     
-  const data = await get("/v1/01925c4c-b71b-46f5-ba9a-522071071374")
+  const data = await getFromCacheOrApi("/v1/01925c4c-b71b-46f5-ba9a-522071071374")
 
     return {
         props: {
