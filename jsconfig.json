@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {        
+        "Base": [
+          "Base/Exports"
+        ]
+      }
+    }
+  }
