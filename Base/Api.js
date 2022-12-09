@@ -17,14 +17,3 @@ export async function get(url) {
             return { statusCode: error?.response?.status ?? 500 }
         })
 }
-export async function post(url, data) {
-    return await
-        axiosApi.post(url, data).then(response => {
-            return { ...response.data, statusCode: response.status }
-
-        }).catch(error => {
-
-            return { ...error?.response?.data, statusCode: error?.response?.status }
-        })
-
-}
