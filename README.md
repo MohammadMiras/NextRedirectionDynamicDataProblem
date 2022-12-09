@@ -1,1 +1,1 @@
-A Project to show the bug when dynamic data is loaded andd cached to be use  inside the middleware for redirections
+A Project to show the bug when dynamic data is loaded and cached to be use  inside the middleware for redirections.
