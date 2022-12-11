@@ -7,7 +7,6 @@ const fs = require('fs')
 const packageJson = fs.readFileSync(path.resolve(__dirname, 'package.json')).toString()
 const react = packageJson.match(/(?<="react": ")[^"]*/g)[0]
 const next = packageJson.match(/(?<="next": ")[^"]*/g)[0]
-const tailwind = packageJson.match(/(?<="tailwindcss": ")[^"]*/g)[0]
 
 const configNext = (config) => {
     const { storage, app, locales, ...rest } = config
@@ -16,8 +15,7 @@ const configNext = (config) => {
         output: 'standalone',
         env: {
             React: react,
-            Next: next,
-            Tailwind: tailwind
+            Next: next
         },
         images: {
             remotePatterns: [
