@@ -40,20 +40,6 @@ const configNext = (config) => {
             return config;
         },
     }
-    if (locales) {
-        mergedConfig['i18n'] = {
-            locales: locales.list,
-            defaultLocale: locales.default,
-            localeDetection: false,
-        }
-    }
-    else {
-        mergedConfig['i18n'] = {
-            locales: ['en'],
-            defaultLocale: 'en',
-            localeDetection: false,
-        }
-    }
     return mergedConfig
 }
 
